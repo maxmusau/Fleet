@@ -1,0 +1,65 @@
+<div class="row sticky-top p-3">
+    <div style="display:inline-flex;">
+                                  <div class="col-md-8 d-flex justify-content-between">
+                                 <div class="navbar navbar-light">
+                                     <button type="button" class="navbar-toggler"
+                                     data-toggle="onoff" id="mybutton">
+
+                                         <span class="navbar-toggler-icon"></span>
+                                     </button>
+                                 </div>
+
+                                 <div>
+                                    <form action="">
+                                        <input type="text" placeholder="Search Something here"
+                                        class="form-control">
+                                   </form>
+                                 </div>
+
+                             </div>
+                                   <div class="col-md-4">
+                                 <div class="d-flex justify-content-around">
+                                        <div class="pt-2">
+                                            <a href="#" class="notification">
+                                                <span>Inbox</span>
+                                                <span class="badge">3</span>
+                                            </a>
+                                        </div>
+                                        <div class="dropdown ">
+                                            <span>
+                                                <img src="../static/images/admin.jpg" alt=""
+                                                class="img-fluid rounded-circle shadow"
+                                                width="30">
+                                                <b>
+                                                    {% if 'user_id' in session %}
+                                                          {{ session['fname']}} : {{session['role']   }}
+                                                    {% endif %}
+                                                </b>
+                                            </span>
+                                            <div class="dropdown-content" style="width: 100%;">
+                                                <ul>
+                                                    <li>
+                                                        <a href="/logout" class="mylinks"
+                                                        onclick="return confirm('Are you sure?');">Logout</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" class="mylinks">Profile</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" class="mylinks">Settings</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                 </div>
+
+
+
+
+
+
+
+                             </div>
+                             </div>
+
+</div>

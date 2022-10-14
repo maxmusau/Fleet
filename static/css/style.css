@@ -1,0 +1,112 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+#navigation{
+    background-color: #89a5e7;
+
+}
+.logo{
+    margin-left: 15%;
+    margin-top: 7%;
+}
+
+.nav1 a{
+    /* border-bottom: 1px solid #b5c6ee; */
+    color: white;
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 18px 10px;
+}
+
+.nav1 i{
+    margin-right: 10px;
+}
+
+.nav1 a:hover{
+    background-color: #b2c5f3;
+    border-left: 5px solid #b7bac2;
+}
+
+ul{
+    list-style: none                        ;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .mylinks {
+      text-decoration: none;
+      color: #39393a;
+  }
+
+  .dropdown-content LI {
+    margin-bottom: 10%;
+  }
+
+  .notification {
+    background-color: #555;
+    color: white;
+    text-decoration: none;
+    padding: 2px 10px;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+
+  }
+
+  .notification:hover {
+    background: rgb(214, 210, 210);
+  }
+
+  .notification .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 2px 5px;
+    border-radius: 50%;
+    background: rgb(255, 51, 0);
+    color: white;
+  }
+
+
+
+   /* Not to show for screen less than 998px */
+  @media (max-width:998px){
+    .hide{
+        display: none;
+    }
+    #navigation {
+        position: absolute;
+    }
+  }
+  /* Not to show in screen above 998px */
+  @media (min-width:998px){
+    #mybutton{
+        display: none;
+    }
+  }
+
+  @media (max-width:768px){
+     .logo{
+         width: 50%;
+         margin-left: 20%;
+     }
+  }

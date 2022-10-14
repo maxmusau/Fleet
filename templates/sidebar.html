@@ -1,0 +1,169 @@
+<div class="col-md-2 col-sm-1 col-lg-3 hide" id="navigation">
+                     <div class="logo sticky-top">
+                           <a href="/">
+                               <img src="../static/images/logo.png" alt=""
+                                   class="d-sm-none d-md-block d-none d-sm-block" width="80%">
+                               <img src="../static/images/logo.png" alt=""
+                                  class="d-md-none d-lg-block d-lg-none d-xl-block" width="25%">
+                           </a>
+                           <hr>
+                    </div>
+
+                    <div class="nav1">
+                                 <ul>
+                                     <li>
+                                         <a href="/">
+                                             <i class="fas fa-home" style='color:white'></i>
+                                             <span>Home</span>
+                                         </a>
+                                    </li>
+
+                                    <li>
+                                        <hr>
+                                        <h6 class="text-white">Operations</h6>
+                                              <div class="accordion">
+                                            <div class="accordhhion-item">
+                                                <a href="" style="font-size: 12px; padding: 5px 5px;"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                aria-expanded="true" aria-controls="collapseOne">
+                                                    <span>Driver/Car Management <i class="fas fa-angle-down"
+                                                        style="float: right;"></i></span>
+                                                </a>
+
+                                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                                aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                  <div class="accordion-body">
+                                                    <a href="" style="padding: 5px 5px; font-size: 11px;">
+                                                        <i class="fas fa-car-side" style='color:white'></i>
+                                                        <span>Assign Drivers</span>
+                                                    </a>
+
+                                                    <a href="" style="padding: 5px 5px; font-size: 11px;">
+                                                        <i class="fas fa-car-side" style='color:white'></i>
+                                                        <span>Assign Task</span>
+                                                    </a>
+
+                                                    <a href="" style="padding: 5px 5px; font-size: 11px;">
+                                                        <i class="fas fa-car-side" style='color:white'></i>
+                                                        <span>Billing</span>
+                                                    </a>
+
+                                                  </div>
+                                                </div>
+                                              </div>
+                                           </div>
+                                    </li>
+
+
+
+                                    <li>
+                                        <hr>
+                                        <h6 class="text-white">Revenue Reports</h6>
+                                           <div class="accordion">
+                                            <div class="accordhhion-item">
+                                                <a href="" style="font-size: 12px; padding: 5px 5px;"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="true" aria-controls="collapseTwo">
+                                                    <span>Driver/Car Reports <i class="fas fa-angle-down"
+                                                        style="float: right;"></i></span>
+                                                </a>
+
+                                                <div id="collapseTwo" class="accordion-collapse collapse"
+                                                aria-labelledby="headingtwo" data-bs-parent="#accordionExample">
+                                                  <div class="accordion-body">
+                                                    <a href="" style="padding: 5px 5px; font-size: 11px;">
+                                                        <i class="fas fa-car-side" style='color:white'></i>
+                                                        <span>Drivers Reports</span>
+                                                    </a>
+
+                                                    <a href="" style="padding: 5px 5px; font-size: 11px;">
+                                                        <i class="fas fa-car-side" style='color:white'></i>
+                                                        <span>Vehicle Reports</span>
+                                                    </a>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                           </div>
+                                    </li>
+
+                                    <li>
+                                         <hr>
+                                         <h6 class="text-white">My Profile</h6>
+                                         <a href="" style="padding: 10px 10px; font-size: small;">
+                                            <i class="far fa-address-card" style='color:white'></i>
+                                            <span>Edit Details</span>
+                                         </a>
+
+                                         <a href="" style="padding: 10px 10px; font-size: small;">
+                                            <i class="far fa-address-card" style='color:white'></i>
+                                            <span>Change</span>
+                                         </a>
+                                    </li>
+
+                                      {% if session['role'] == 'operations' or session['role'] == 'admin' %}
+                                        <li>
+                                             <hr>
+                                            <h6 class="text-white">Account</h6>
+                                            <a href="" style="padding: 10px 10px; font-size: small;">
+                                               <i class="fas fa-user-check" style='color:white'></i>
+                                               <span>Add Driver</span>
+                                            </a>
+
+                                            <a href="" style="padding: 10px 10px; font-size: small;">
+                                               <i class="fas fa-car-side" style='color:white'></i>
+                                               <span>Add Vehicle</span>
+                                            </a>
+
+                                            <a href="" style="padding: 10px 10px; font-size: small;">
+                                                <i class="	fas fa-user-alt" style='color:white'></i>
+                                                <span>Add Owner</span>
+                                             </a>
+                                       </li>
+                                     {% endif %}
+
+                                    {% if session['role'] == 'admin'%}
+                                   <li>
+                                        <hr>
+                                        <h6 class="text-white">Management</h6>
+                                        <a href="" style="padding: 10px 10px; font-size: small;">
+                                        <i class="fas fa-user-check" style='color:white'></i>
+                                        <span>Add Users</span>
+                                        </a>
+
+                                        <a href="/addModel" style="padding: 10px 10px; font-size: small;">
+                                        <i class="fas fa-car-side" style='color:white'></i>
+                                        <span>Add Models</span>
+                                        </a>
+
+                                       <a href="/addMake" style="padding: 10px 10px; font-size: small;">
+                                        <i class="fas fa-car-side" style='color:white'></i>
+                                        <span>Add Make</span>
+                                        </a>
+
+                                       <a href="/addType" style="padding: 10px 10px; font-size: small;">
+                                        <i class="fas fa-car-side" style='color:white'></i>
+                                        <span>Add Type</span>
+                                        </a>
+
+                                       <a href="/addLocation" style="padding: 10px 10px; font-size: small;">
+                                        <i class="fas fa-car-side" style='color:white'></i>
+                                        <span>Add Locations</span>
+                                        </a>
+
+                                  </li>
+                                  {% endif %}
+
+
+                            </ul>
+
+
+                    </div>
+
+                    <div class="footer pb-3">
+                         <div class="card shadow bg-warning p-3">
+                              <h2 class="badge bg-danger">ProAdmin</h2>
+                              <p class="text-muted" style="font-size: 10px;text-align: center;">
+                                Packed with Fleet management Features. 100% free</p>
+                         </div>
+                    </div>
+               </div>

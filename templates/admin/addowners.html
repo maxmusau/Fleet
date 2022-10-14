@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+rel="stylesheet"
+integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/bc4d7d5bce.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
+</head>
+<body>
+    <div class="container-fluid">
+         <div class="row">
+                <!-- sidebar -->
+                  {% include 'sidebar.html'%}
+                <!-- end sidebar -->
+                <!-- top bar -->
+                <div class="col-md-10 col-sm-11 col-lg-9">
+                        {% include 'topbar.html'%}
+                        <div class="row">
+                              <h4>Add Vehicle Owners</h4>
+                              <div class="col-md-12 card p-4 shadow ms-3">
+                                    <form id="ownerForm">
+                                        <section class="row">
+                                            <div class="col-md-4">
+                                                <input type="text" id="fname"
+                                                     placeholder="Enter First Name"
+                                                     class="form-control"><br>
+                                                 <input type="text" id="lname"
+                                                     placeholder="Enter Last Name"
+                                                     class="form-control"><br>
+                                                 <input type="text" id="surname"
+                                                     placeholder="Enter Surname"
+                                                     class="form-control"><br>
+                                                 <input type="text" id="phone"
+                                                     placeholder="Enter Phone +254XXXXXXXXXX"
+                                                     class="form-control"><br>
+                                                 <input type="text" id="email"
+                                                     placeholder="Enter Email"
+                                                     class="form-control"> <br>
+                                                 <label for="dob">Enter DOB</label> <br>
+                                                  <input type="date" id="dob"
+                                                         class="form-control"><br>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                 <b>Select Location</b> <br>
+                                                    {% if locations %}
+                                                    <select id="loc_id" class="form-control form-select">
+                                                          {% for location in locations %}
+                                                              <option value="{{location[0]}}">{{location[1]}}</option>
+                                                          {% endfor %}
+                                                    </select>
+                                                    {% endif %} <br>
+                                                  <label for="address">Address</label><br>
+                                                  <textarea id="address" cols="50" rows="2"
+                                                  class="form-control" required></textarea> <br>
+                                                  <input type="number" id="id_no" placeholder="Enter Id No"
+                                                         class="form-control"><br>
+                                                <label for="passport_pic">Upload a Photo</label> <br>
+                                                  <input type="file" id="passport_pic"  name="files[]" multiple="multiple"
+                                                         class="form-control" required><br>
+
+                                                  <input type="submit" value="Add Add Owner"
+                                                         class="btn btn-info text-white">
+                                            </div>
+                                      </section>
+                                         <span style="color:red; background:grey;" id="error"></span>
+                                         <span style="color:green;background:grey;" id="success"></span>
+                                         <span style="color:red;background:grey;" id="error2"></span>
+                                  </form>
+                                  <br>
+
+                              </div>
+                        </div>
+               </div>
+         </div>
+    </div>
+    <!-- above last div -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename = 'js/addowner.js')}}"></script>
+<script>
+     $(document).ready(function(){
+          $("#mybutton").click(function(){
+                 $("#navigation").toggleClass("hide")
+          });
+     });
+</script>
+
+
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+crossorigin="anonymous"></script>
+
+
+</body>
+</html>

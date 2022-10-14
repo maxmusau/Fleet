@@ -64,6 +64,7 @@ def generate_random():
                                  k=S))
     print("The randomly generated string is : " + str(ran))  # print the random data
     return str(ran)
+
 #generate_random()
 from cryptography.fernet import  Fernet
 def write_key():
@@ -83,6 +84,11 @@ def encrypt(data):
     print("Before Encr", data)
     print("After Encr ", encrypted_data.decode())
     return encrypted_data.decode()
+def get_OS():
+    import platform
+    plt=platform.system()
+    print(plt)
+    return plt
 
 encrypt("+254703353657")
 #b'gAAAAABjIYV6HGcxidgjeXrvAgmOGFQvGWtOyI-xMW9i1RICxTkahv1G5ABpy352ODFzpd-Y-CsTmOL4GStDDBCesTelea7PPQ=='
@@ -93,5 +99,19 @@ def decrypt(data):
     print("Decrypted ", decrypted_data.decode())
     return decrypted_data.decode()
 
+# validate email
+import re
+def validate_email(s):
+   pat = "^[a-zA-Z0-9-_]+@[a-zA-Z0-9]+\.[a-z]{1,3}$"
+   if re.match(pat,s):
+      return True
+   return False
+
+# check mac_address
+def check_mac_address():
+    from getmac import get_mac_address as gma
+    print(gma())
+    return gma()
+check_mac_address()
 # decrypt("gAAAAABjLZJ7YWig8gbnPDgQSe0n2ekiXRGdUH0A8CXQP2XoUBf2rHJ86-l7nMokkjXjQl7WbTpcoJjN7lADjOS3HAlT8TfvjQ==")
 

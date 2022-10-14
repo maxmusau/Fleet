@@ -39,7 +39,8 @@
                 <!-- Password input -->
                 <b style="color:red;">{{message}}</b> <br>
                 <span id="countdown"></span>
-                <a href="/signin" id="login"></a>
+                <a href="/signin" id="login">Login Again</a>
+
 
                 <div class="form-outline mb-3">
                   <input type="text" id="otp" class="form-control form-control-lg"
@@ -53,7 +54,7 @@
                 </div>
               </form>
         {% else %}
-        <h3>Error Encountered, <a href="/login">Please Login</a></h3>
+        <h3>Error Encountered, <a href="/signin">Please Login</a></h3>
         <br>
         {% endif %}
 
@@ -80,7 +81,7 @@
       <a href="#!" class="text-white me-4">
         <i class="fab fa-google"></i>
       </a>
-      <a href="#!" class="text-white text-center">
+      <a href="#!" class="text-white">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </div>
@@ -92,17 +93,16 @@
 	</script>
 <script src="{{ url_for('static', filename='js/login.js') }}"></script>
 <script>
-    document.getElementById("login").style.visibility="hidden";
+   document.getElementById("login").style.visibility = "hidden";
      var timeleft = 60;
      var downloadTimer = setInterval(function(){
       if(timeleft <= 0){
         clearInterval(downloadTimer);
         document.getElementById("countdown").innerHTML = "Finished";
-        document.getElementById("otp").style.visibility ="hidden";
-        document.getElementById("otplabel").style.visibility ="hidden"
-        document.getElementById("btn").style.visibility ="hidden"
-        document.getElementById("login").style.visibility ="hidden"
-
+        document.getElementById("otp").style.visibility = "hidden";
+        document.getElementById("otplabel").style.visibility = "hidden";
+        document.getElementById("btn").style.visibility = "hidden";
+        document.getElementById("login").style.visibility = "visible";
       } else {
         document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
       }

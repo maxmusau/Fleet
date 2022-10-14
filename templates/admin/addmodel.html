@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+rel="stylesheet"
+integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/bc4d7d5bce.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
+</head>
+<body>
+    <div class="container-fluid">
+         <div class="row">
+                <!-- sidebar -->
+                  {% include 'sidebar.html'%}
+                <!-- end sidebar -->
+                <!-- top bar -->
+                <div class="col-md-10 col-sm-11 col-lg-9">
+                        {% include 'topbar.html'%}
+                        <div class="row">
+                              <h4>Add Make</h4>
+                              <div class="col-md-6 card p-4 shadow ms-3">
+                                    <form id="modelForm">
+                                        <b>Select Make</b> <br>
+                                        {% if makes %}
+                                        <select id="make_id" class="form-control form-select">
+                                              {% for make in makes %}
+                                                  <option value="{{make[0]}}">{{make[1]}}</option>
+                                              {% endfor %}
+                                        </select>
+                                        {% endif %}
+                                        <br>
+                                      <input type="text" id="model"
+                                             placeholder="Enter Models For Above Make"
+                                             class="form-control">
+                                       <span style="color:orange;" id="warningAlert"></span>
+                                        <br>
+                                      <input type="submit" value="Add Model"
+                                             class="btn btn-info">
+                                  </form>
+                                  <br>
+                                  <!-- Below will show ajax responses -->
+                                  <span style="color:red" id="errorAlert"></span>
+                                  <span style="color:green" id="successAlert"></span>
+                              </div>
+                        </div>
+               </div>
+         </div>
+    </div>
+    <!-- above last div -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename = 'js/addmodel.js')}}"></script>
+<script>
+     $(document).ready(function(){
+          $("#mybutton").click(function(){
+                 $("#navigation").toggleClass("hide")
+          });
+     });
+</script>
+
+
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+crossorigin="anonymous"></script>
+
+
+</body>
+</html>
